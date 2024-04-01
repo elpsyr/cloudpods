@@ -546,7 +546,7 @@ func (this *ResourceManager) BatchPerformActionInContexts(session *mcclient.Clie
 }
 
 func (this *ResourceManager) Delete(session *mcclient.ClientSession, id string, body jsonutils.JSONObject) (jsonutils.JSONObject, error) {
-	return this.DeleteInContexts(session, id, body, nil)
+	return this.DeleteInContextsWithParam(session, id, body, body, nil)
 }
 
 func (this *ResourceManager) DeleteWithParam(session *mcclient.ClientSession, id string, params, body jsonutils.JSONObject) (jsonutils.JSONObject, error) {
